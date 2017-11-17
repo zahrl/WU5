@@ -1,25 +1,19 @@
-class binary_tree():
-	def __init__(self, root_name):
-		self.data = root_name
-		self.left_child = None
-		self.right_child = None
-
 class node():
 	def __init__(self, data):
 		self.data = data;
 		self.left_child = None
 		self.right_child = None
 
-class output_tree(): # breadth first
-	def __init__(self, root):
-		print("ROOT: " + root.data)
-		next_left = root.left_child
-		while next is not None:
-			print("LEFT CHILD: " + next.data)
-			next = next.left_child
+class output_tree():
+	def __init__(self, node):
+		if node.data:
+			print(node.data)
+		if node.left_child:
+			output_tree(node.left_child)
+		if node.right_child:
+			output_tree(node.right_child)
 
-tree = binary_tree("Habsburg")
-tree.root = "Habsburg"
+tree = node("Habsburg")
 tree.left_child = node("Joseph I.")
 tree.right_child = node("Charles VI.")
 tree.left_child.left_child = node("Maria Josepha")
